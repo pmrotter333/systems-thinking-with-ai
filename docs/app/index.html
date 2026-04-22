@@ -3682,6 +3682,19 @@
             </button>
             <div class="faq-item__answer" x-show="faqOpenItem === 'phone'" style="display:none;">
               <p>Yes. Open Hora in your mobile browser, then use "Add to Home Screen" (iOS Safari) or "Install app" (Android Chrome) to add it as an app. It works fully offline once installed.</p>
+              <p><strong>On iOS, export a backup before you install.</strong> iOS treats the installed app as a separate storage container from your browser tab. Any data you entered in Safari before installing will not carry over. Export a backup from Settings first, then restore it after installing. Android does not have this limitation.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__question" @click="faqOpenItem = faqOpenItem === 'ios-data' ? null : 'ios-data'">
+              Will I lose my data if I install the app on my phone?
+              <svg class="faq-item__chevron" :class="{'faq-item__chevron--open': faqOpenItem === 'ios-data'}" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-item__answer" x-show="faqOpenItem === 'ios-data'" style="display:none;">
+              <p><strong>On iOS: yes, unless you back up first.</strong> When you use "Add to Home Screen" on an iPhone or iPad, iOS creates a new isolated app container with its own storage. Data you entered in Safari before installing is not copied over. This is an Apple constraint that cannot be worked around.</p>
+              <p>Before installing on iOS, go to Settings and tap "Download backup (.json)." Once the app is installed and open, go to Settings and tap "Restore from backup" to bring your data across.</p>
+              <p><strong>On Android and desktop</strong> (Chrome or Edge), installing Hora shares the same storage as your browser. Your data carries over automatically and there is nothing extra to do.</p>
             </div>
           </div>
 
@@ -3691,7 +3704,8 @@
               <svg class="faq-item__chevron" :class="{'faq-item__chevron--open': faqOpenItem === 'install-safe'}" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <div class="faq-item__answer" x-show="faqOpenItem === 'install-safe'" style="display:none;">
-              <p>Installing Hora is closer to saving a bookmark than downloading software. The browser adds a shortcut to your desktop or home screen. No files are installed on your computer. Your data stays exactly where it is now: on your device, in your browser. If you change your mind, remove it the same way you'd remove any app shortcut.</p>
+              <p>Installing Hora is closer to saving a bookmark than downloading software. The browser adds a shortcut to your desktop or home screen. No files are installed on your computer. If you change your mind, remove it the same way you would remove any app shortcut.</p>
+              <p>One note for iOS users: the installed app runs in its own storage container, separate from Safari. Back up your data before installing if you have existing projects. See "Will I lose my data if I install the app on my phone?" above.</p>
             </div>
           </div>
         </div>
@@ -3818,6 +3832,13 @@
             <li class="onboarding-item"><span class="onboarding-item__label">Notes</span><span>Anything worth keeping that is not a formal decision.</span></li>
             <li class="onboarding-item"><span class="onboarding-item__label">Log</span><span>A full history of sessions, decisions, and plan changes.</span></li>
           </ul>
+        </div>
+
+        <div class="onboarding-ios-notice">
+          <span class="onboarding-ios-notice__icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2L14.5 13.5H1.5L8 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><line x1="8" y1="7" x2="8" y2="10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="12" r="0.75" fill="currentColor"/></svg>
+          </span>
+          <span><strong>iOS users:</strong> if you plan to install this app, back up your data first. Installing on iOS creates a new storage container and your existing data will not carry over. See Help for details.</span>
         </div>
 
         <div class="onboarding-modal__actions">
