@@ -306,6 +306,7 @@ html, body {
   overflow-y: auto;
   flex-direction: column;
   padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 /* ============================================================
@@ -375,6 +376,7 @@ html, body {
 
   .view {
     padding: var(--space-6) var(--space-4);
+    padding-bottom: calc(var(--space-6) + env(safe-area-inset-bottom, 0px));
   }
 
   /* Macro nav: hide labels on inactive steps so it fits narrow screens */
@@ -1924,6 +1926,7 @@ details[open] .collab-guide__chevron {
   justify-content: center;
   z-index: 500;
   padding: var(--space-4);
+  padding-bottom: calc(var(--space-4) + env(safe-area-inset-bottom, 0px));
   overflow-y: auto;
 }
 
