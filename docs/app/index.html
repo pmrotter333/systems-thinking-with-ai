@@ -824,6 +824,7 @@
                           rows="4"
                           aria-label="Paste decision summary"
                         ></textarea>
+                        <p class="field__hint">For best results, paste the AI's numbered list directly. If typing manually, use a numbered or bulleted list with one decision per line.</p>
                         <div style="display:flex; gap:var(--space-3); align-items:center; flex-wrap:wrap;">
                           <button class="btn btn-secondary btn-sm" @click="parseAndSaveDecisions()" :disabled="!decisionPasteContent.trim()">Save to Decision Journal</button>
                           <template x-if="decisionSaveMsg">
@@ -1184,6 +1185,7 @@
                           rows="4"
                           aria-label="Paste decision summary"
                         ></textarea>
+                        <p class="field__hint">For best results, paste the AI's numbered list directly. If typing manually, use a numbered or bulleted list with one decision per line.</p>
                         <div style="display:flex; gap:var(--space-3); align-items:center; flex-wrap:wrap;">
                           <button class="btn btn-secondary btn-sm" @click="parseAndSaveDecisions()" :disabled="!decisionPasteContent.trim()">Save to Decision Journal</button>
                           <template x-if="decisionSaveMsg">
@@ -1651,6 +1653,7 @@
                               rows="4"
                               aria-label="Paste decision summary"
                             ></textarea>
+                            <p class="field__hint">For best results, paste the AI's numbered list directly. If typing manually, use a numbered or bulleted list with one decision per line.</p>
                             <div style="display:flex; gap:var(--space-3); align-items:center; flex-wrap:wrap;">
                               <button class="btn btn-secondary btn-sm" @click="parseAndSaveDecisions()" :disabled="!decisionPasteContent.trim()">Save to Decision Journal</button>
                               <template x-if="decisionSaveMsg">
@@ -1979,6 +1982,7 @@
                             rows="4"
                             aria-label="Paste decision summary"
                           ></textarea>
+                          <p class="field__hint">For best results, paste the AI's numbered list directly. If typing manually, use a numbered or bulleted list with one decision per line.</p>
                           <div style="display:flex; gap:var(--space-3); align-items:center; flex-wrap:wrap;">
                             <button class="btn btn-secondary btn-sm" @click="parseAndSaveDecisions()" :disabled="!decisionPasteContent.trim()">Save to Decision Journal</button>
                             <template x-if="decisionSaveMsg">

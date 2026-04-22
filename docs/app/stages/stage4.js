@@ -525,9 +525,9 @@ function stage4(projectId, project) {
         this.decisionSaveMsg = parsed.length + ' decision' + (parsed.length !== 1 ? 's' : '') + ' saved to your Decision Journal.';
       } else {
         await DB.addDecision(this.projectId, 4, {
-          title:    'Session decisions (unstructured)',
+          title:    'Session decisions (free text)',
           decision: raw,
-          context:  'Stored as block — could not parse individual items. Edit in Decision Journal.',
+          context:  'Pasted as a single block. To split into individual entries, edit this record in the Decision Journal and add each decision on its own numbered line.',
         });
         this.decisionSaveMsg = 'Saved as a single block. You can split individual decisions in the Decision Journal.';
       }

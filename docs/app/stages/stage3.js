@@ -1330,22 +1330,30 @@ function stage3(projectId, project) {
     /* --------------------------------------------------------
        Step navigation
     -------------------------------------------------------- */
+    scrollToTop() {
+      const main = document.getElementById('main');
+      if (main) main.scrollTo({ top: 0, behavior: 'smooth' });
+    },
+
     goToMacroStep(n) {
       if (n < 1 || n > 4) return;
       if (n > 1 && !this.allStepsComplete) return;
       this.macroStep = n;
+      this.scrollToTop();
       this.scheduleAutoSave();
     },
 
     goToStep(i) {
       if (i < 0 || i >= this.stepCount) return;
       this.currentStep = i;
+      this.scrollToTop();
       this.scheduleAutoSave();
     },
 
     prevStep() {
       if (this.currentStep > 0) {
         this.currentStep--;
+        this.scrollToTop();
         this.scheduleAutoSave();
       }
     },
@@ -1354,6 +1362,7 @@ function stage3(projectId, project) {
       if (!this.isCurrentValid) return;
       if (this.currentStep < this.stepCount - 1) {
         this.currentStep++;
+        this.scrollToTop();
         this.scheduleAutoSave();
       }
     },
@@ -1512,9 +1521,9 @@ function stage3(projectId, project) {
         this.decisionSaveMsg = parsed.length + ' decision' + (parsed.length !== 1 ? 's' : '') + ' saved to your Decision Journal.';
       } else {
         await DB.addDecision(this.projectId, 3, {
-          title:    'Session decisions (unstructured)',
+          title:    'Session decisions (free text)',
           decision: raw,
-          context:  'Stored as block — could not parse individual items. Edit in Decision Journal.',
+          context:  'Pasted as a single block. To split into individual entries, edit this record in the Decision Journal and add each decision on its own numbered line.',
         });
         this.decisionSaveMsg = 'Saved as a single block. You can split individual decisions in the Decision Journal.';
       }
